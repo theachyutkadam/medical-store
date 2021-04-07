@@ -1,0 +1,72 @@
+<div class="card-body">
+  <form>
+    <%= form_with(model: customer) do |form| %>
+      <% if customer.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
+
+          <ul>
+            <% customer.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label class="bmd-label-floating">Fist Name</label>
+            <%= form.text_field :first_name, class: "form-control"%>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label class="bmd-label-floating">Last Name</label>
+            <%= form.text_field :last_name, class: "form-control"%>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label class="bmd-label-floating">Birth Date</label>
+            <%= form.date_select :birth_date, class: "form-control" %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label class="bmd-label-floating">Gender</label>
+            <%= form.text_field :gender, class: "form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label class="bmd-label-floating">Adress</label>
+            <%= form.text_field :contact, class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <label class="bmd-label-floating">Adress</label>
+            <%= form.text_area :address, class: "form-control" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-2">
+          <%= form.submit class: "btn btn-primary pull-left"%>
+        </div>
+        <div class="col-md-3">
+          <%= link_to 'Back', customers_path, class: "btn btn-info pull-left"%>
+        </div>
+      </div>
+
+      <div class="clearfix"></div>
+    <% end %>
+  </form>
+</div>
