@@ -8,44 +8,46 @@
                                 <i class="material-icons">close</i>
                               </button>
                             </td>
-<div class="content">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="card card-plain">
-          <div class="card-header card-header-primary">
-            <h4 class="card-title mt-0"> Customers
-            <%= link_to 'New Customer', new_customer_path, class: "btn btn-INFO pull-right btn-round card-title mt-0" %>
-            </h4>
-          </div>
-          <div class="card-body">
-            <div class="table-responsive">
-              <table class="table table-hover">
-                <thead class="">
-                  <th>First name</th>
-                  <th>Last name</th>
-                  <th>Birth date</th>
-                  <th>Gender</th>
-                  <th>Contact</th>
-                  <th>Address</th>
-                  <th colspan="3">Action</th>
-                </thead>
-                <tbody>
-                  <% @customers.each do |customer| %>
-                    <tr>
-                      <td><%= customer.first_name %></td>
-                      <td><%= customer.last_name %></td>
-                      <td><%= customer.birth_date %></td>
-                      <td><%= customer.gender %></td>
-                      <td><%= customer.contact %></td>
-                      <td><%= customer.address %></td>
-                      <td><%= link_to 'Show', customer %></td>
-                      <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
-                      <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                    </tr>
-                  <% end %>
-                </tbody>
-              </table>
+<div class="main-panel">
+  <div class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card card-plain">
+            <div class="card-header card-header-primary">
+              <h4 class="card-title mt-0"> Customers
+              <%= link_to 'New Customer', new_customer_path, class: "btn btn-INFO pull-right btn-round card-title mt-0" %>
+              </h4>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-hover">
+                  <thead class="">
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Birth date</th>
+                    <th>Gender</th>
+                    <th>Contact</th>
+                    <th>Address</th>
+                    <th colspan="3">Action</th>
+                  </thead>
+                  <tbody>
+                    <% @customers.each do |customer| %>
+                      <tr>
+                        <td><%= customer.first_name %></td>
+                        <td><%= customer.last_name %></td>
+                        <td><%= customer.birth_date %></td>
+                        <td><%= customer.gender %></td>
+                        <td><%= customer.contact %></td>
+                        <td><%= customer.address %></td>
+                        <td><%= link_to 'Show', customer %></td>
+                        <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
+                        <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                      </tr>
+                    <% end %>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>

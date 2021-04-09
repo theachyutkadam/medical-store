@@ -4,10 +4,16 @@
       <% if customer.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
-
           <ul>
             <% customer.errors.each do |error| %>
               <li><%= error.full_message %></li>
+              <div class="alert alert-warning">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <i class="material-icons">close</i>
+                </button>
+                <span>
+                  <b> Warning - </b><%= error.full_message %></span>
+              </div>
             <% end %>
           </ul>
         </div>
@@ -16,7 +22,7 @@
       <div class="row">
         <div class="col-md-6">
           <div class="form-group">
-            <label class="bmd-label-floating">Fist Name</label>
+            <label class="bmd-label-floating">First Name</label>
             <%= form.text_field :first_name, class: "form-control"%>
           </div>
         </div>
@@ -31,7 +37,7 @@
         <div class="col-md-6">
           <div class="form-group">
             <label class="bmd-label-floating">Birth Date</label>
-            <%= form.date_select :birth_date, class: "form-control" %>
+            <%#= form.date_select :birth_date, class: "form-control" %>
           </div>
         </div>
         <div class="col-md-6">
@@ -44,7 +50,7 @@
       <div class="row">
         <div class="col-md-6">
           <div class="form-group">
-            <label class="bmd-label-floating">Adress</label>
+            <label class="bmd-label-floating">Contact</label>
             <%= form.text_field :contact, class: "form-control" %>
           </div>
         </div>
@@ -60,9 +66,6 @@
       <div class="row">
         <div class="col-md-2">
           <%= form.submit class: "btn btn-primary pull-left"%>
-        </div>
-        <div class="col-md-3">
-          <%= link_to 'Back', customers_path, class: "btn btn-info pull-left"%>
         </div>
       </div>
 
